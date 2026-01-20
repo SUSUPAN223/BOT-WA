@@ -46,10 +46,12 @@ if (!fs.existsSync(uploadsDir)) {
     console.log('Folder "uploads" berhasil dibuat.');
 }
 
+
 // === TAHAP 4: KONFIGURASI KONEKSI WHATSAPP ===
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
+        executablePath: '/data/data/com.termux/files/usr/bin/chromium', // Tambahkan baris ini
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox'
@@ -543,4 +545,5 @@ client.on('message_create', async (msg) => {
 
 // === TAHAP 7: MULAI BOT ===
 client.initialize();
+
 
