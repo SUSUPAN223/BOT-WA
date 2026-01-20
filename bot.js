@@ -14,11 +14,17 @@ const { handleHideTagCommand } = require('./fungsi.js');
 let botId, botNumber; 
 
 // === TAHAP 2: KONFIGURASI KONEKSI DATABASE (MYSQL) ===
+// === TAHAP 2: KONEKSI KE TIDB CLOUD (SESUAI GAMBAR ANDA) ===
 const db = mysql.createPool({
-    host: '127.0.0.1',
-    user: 'root',
-    password: 'jangjangba',
-    database: 'auto_reply',
+    host: 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com', 
+    port: 4000,                                           
+    user: 'ErS11EtXHVAS3D1.root',                         
+    password: '1guU9hfaX1EXQKtU',         
+    database: 'test',                                      
+    ssl: {
+        minVersion: 'TLSv1.2',
+        rejectUnauthorized: true
+    },
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -537,3 +543,4 @@ client.on('message_create', async (msg) => {
 
 // === TAHAP 7: MULAI BOT ===
 client.initialize();
+
