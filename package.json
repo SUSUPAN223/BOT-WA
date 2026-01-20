@@ -1,0 +1,22 @@
+{
+  "name": "bot-wa-mysql",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.13.1",
+    "mysql2": "^3.15.3",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
